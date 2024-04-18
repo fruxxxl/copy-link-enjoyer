@@ -15,3 +15,5 @@ Simply copy links as usual, and they will automatically be formatted in Markdown
 ## Configuration
 You can enable or disable the Markdown link copying feature in the extension settings.
 
+## Demo
+[![Copy link enjoyer demo](https://img.youtube.com/vi/BBqqy8nU02o/0.jpg)](http://www.youtube.com/watch?v=BBqqy8nU02o)
