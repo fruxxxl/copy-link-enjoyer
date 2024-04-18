@@ -1,26 +1,24 @@
 document.addEventListener('copy', (event) => {
-  event.preventDefault();
-
+  
   chrome.storage.sync.get(['markdownCopyEnabled'], function(result) {
-    if (result.markdownCopyEnabled) {
-      const selection = document.getSelection().toString();
-      if (selection) {
-        const currentUrl = window.location.href;
-        const formattedMarkdownLink = `[${selection}](${currentUrl})`;
-        navigator.clipboard.writeText(formattedMarkdownLink).then(() => {
-          showToast(`Copied as a markdown link: ${formattedMarkdownLink}`);
-          saveLink(formattedMarkdownLink);
-        }).catch(err => {
-          console.error('Copy error: ', err);
-        });
-      }
-    } else {
-      navigator.clipboard.writeText(document.getSelection().toString()).then(() => {
-        showToast("Текст скопирован");
+    if (!result.markdownCopyEnabled) {
+      return;
+    }
+    
+    event.preventDefault();
+
+    const selection = document.getSelection().toString();
+    if (selection) {
+      const currentUrl = window.location.href;
+      const formattedMarkdownLink = `[${selection}](${currentUrl})`;
+      navigator.clipboard.writeText(formattedMarkdownLink).then(() => {
+        showToast(`Copied as a markdown link: ${formattedMarkdownLink}`);
+        saveLink(formattedMarkdownLink);
       }).catch(err => {
-        console.error('Copy error текста: ', err);
+        console.error('Copy error: ', err);
       });
     }
+    
   });
 });
 
