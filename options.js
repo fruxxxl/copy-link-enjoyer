@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   restoreOptions()
   const markdownCopyCheckbox = document.getElementById('markdownCopyCheckbox');
-
+  
   chrome.storage.sync.get(['markdownCopyEnabled'], function(result) {
     markdownCopyCheckbox.checked = result.markdownCopyEnabled || false; // По умолчанию false, если значение не найдено
   });

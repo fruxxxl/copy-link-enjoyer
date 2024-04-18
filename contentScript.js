@@ -10,7 +10,8 @@ document.addEventListener('copy', (event) => {
     const selection = document.getSelection().toString();
     if (selection) {
       const currentUrl = window.location.href;
-      const formattedMarkdownLink = `[${selection}](${currentUrl})`;
+      const cleanSelection = selection.replace(/[\[\]()]/g, '/');
+      const formattedMarkdownLink = `[${cleanSelection}](${currentUrl})`;
       navigator.clipboard.writeText(formattedMarkdownLink).then(() => {
         showToast(`Copied as a markdown link: ${formattedMarkdownLink}`);
         saveLink(formattedMarkdownLink);
