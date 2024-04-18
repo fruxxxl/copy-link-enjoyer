@@ -10,11 +10,19 @@
         <h3>Copy Link Enjoyer Options</h3>
         <label for="markdownCopyCheckbox" style="display: flex; align-items: center;">
             <input type="checkbox" id="markdownCopyCheckbox">
-            <span>Enable Markdown Format Link Copy</span>
+            <span>Enable MD format for copied link</span>
         </label>
-
+        <div id="linksList"></div>
+        <button id="clearLinks">Clear Links</button>
+        <style>
+            #linksList div {
+                margin: 5px 0;
+                padding: 10px;
+                background-color: #f0f0f0;
+                border-radius: 5px;
+            }
+        </style>
     </div>
-
     <script src="options.js"></script>
 </body>
 

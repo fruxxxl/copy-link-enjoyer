@@ -1,16 +1,17 @@
 # Copy Link Enjoyer
 
-## Описание
-Расширение для браузера, которое форматирует ссылки текущей вкладки в формат Markdown при копировании текста на странице в буфер обмена
+## Description
+A browser extension that formats the current tab's links into Markdown format when copying text on the page to the clipboard.
 
-## Установка
-1. Скачайте и распакуйте архив расширения.
-2. Откройте страницу `chrome://extensions/` в браузере Chrome.
-3. Включите режим разработчика.
-4. Нажмите "Загрузить распакованное расширение" и выберите папку с расширением.
+## Installation
+1. Download and unzip the extension archive.
+2. Open the `chrome://extensions/` page in the Chrome browser.
+3. Enable developer mode.
+4. Click "Load unpacked extension" and select the extension folder.
 
-## Использование
-Просто копируйте ссылки, как обычно, и они автоматически будут форматироваться в Markdown в вашем буфере обмена.
+## Usage
+Simply copy links as usual, and they will automatically be formatted in Markdown in your clipboard.
 
-## Настройка
-Вы можете включить или выключить функцию копирования ссылок в формат Markdown в настройках расширения.
+## Configuration
+You can enable or disable the Markdown link copying feature in the extension settings.
+

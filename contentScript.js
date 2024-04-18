@@ -1,5 +1,5 @@
 document.addEventListener('copy', (event) => {
-  event.preventDefault(); // Отменяем стандартное действие
+  event.preventDefault();
 
   chrome.storage.sync.get(['markdownCopyEnabled'], function(result) {
     if (result.markdownCopyEnabled) {
@@ -7,23 +7,30 @@ document.addEventListener('copy', (event) => {
       if (selection) {
         const currentUrl = window.location.href;
         const formattedMarkdownLink = `[${selection}](${currentUrl})`;
-        // Используем Clipboard API для установки форматированной ссылки в буфер обмена
         navigator.clipboard.writeText(formattedMarkdownLink).then(() => {
-          showToast(`Скопированно как ссылка в md формате: ${formattedMarkdownLink}`);
+          showToast(`Copied as a markdown link: ${formattedMarkdownLink}`);
+          saveLink(formattedMarkdownLink);
         }).catch(err => {
-          console.error('Ошибка при копировании: ', err);
+          console.error('Copy error: ', err);
         });
       }
     } else {
-      // Если функция выключена, копируем текст в буфер обмена как обычно
       navigator.clipboard.writeText(document.getSelection().toString()).then(() => {
         showToast("Текст скопирован");
       }).catch(err => {
-        console.error('Ошибка при копировании текста: ', err);
+        console.error('Copy error текста: ', err);
       });
     }
   });
 });
+
+function saveLink(link) {
+  chrome.storage.sync.get('copiedLinks', (data) => {
+      const links = data.copiedLinks || [];
+      links.push(link);
+      chrome.storage.sync.set({copiedLinks: links});
+  });
+}
 
 function showToast(message) {
   const toast = document.createElement('div');
@@ -40,7 +47,7 @@ function showToast(message) {
   toast.style.fontSize = '14px';
   document.body.appendChild(toast);
 
-  // Удаляем toast через 3 секунды
+
   setTimeout(() => {
     document.body.removeChild(toast);
   }, 3000);
