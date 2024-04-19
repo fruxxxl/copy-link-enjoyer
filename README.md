@@ -1,5 +1,5 @@
 
-# Copy Link Enjoyer <img src="icons/icon32.png" alt="this is meme">
+# Copy Link Enjoyer
 
 ## Description
 A browser extension that formats the current tab's links into Markdown format when copying text on the page to the clipboard.
