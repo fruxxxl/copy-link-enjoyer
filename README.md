@@ -2,7 +2,13 @@
 # Copy Link Enjoyer
 
 ## Description
-A browser extension that formats the current tab's links into Markdown format when copying text on the page to the clipboard.
+A browser extension for collecting sources while reading. Select text on a page and copy it as `[selected text](current page URL)` for a Markdown note, issue, or document.
+
+The extension also keeps a list of copied links in its popup. The implementation is in [`contentScript.js`](contentScript.js) and [`options.js`](options.js).
+
+**По-русски:** выделите текст на странице и скопируйте его вместе со ссылкой на источник. Получится готовая Markdown-ссылка для заметки или задачи.
+
+Built by [Alexander Shulgin](https://procesa.ru/about/), developer at PROCESA. [Browser tools and business automation](https://procesa.ru/).
 
 ## Installation
 1. Download and unzip the extension archive.
@@ -11,7 +17,7 @@ A browser extension that formats the current tab's links into Markdown format wh
 4. Click "Load unpacked extension" and select the extension folder.
 
 ## Usage
-Simply copy links as usual, and they will automatically be formatted in Markdown in your clipboard.
+Enable Markdown copying in the extension popup, then select text on a webpage and copy it. The link points to the current page URL. Markdown copying is disabled by default.
 
 ## Configuration
 You can enable or disable the Markdown link copying feature in the extension settings.
