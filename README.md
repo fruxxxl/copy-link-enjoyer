@@ -8,8 +8,6 @@ The extension also keeps a list of copied links in its popup. The implementation
 
 **По-русски:** выделите текст на странице и скопируйте его вместе со ссылкой на источник. Получится готовая Markdown-ссылка для заметки или задачи.
 
-Built by [Alexander Shulgin](https://procesa.ru/about/), developer at PROCESA. [Browser tools and business automation](https://procesa.ru/).
-
 ## Installation
 1. Download and unzip the extension archive.
 2. Open the `chrome://extensions/` page in the Chrome browser.
